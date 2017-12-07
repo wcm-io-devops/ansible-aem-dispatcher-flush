@@ -1,0 +1,3 @@
+# handler for dispatcher flush
+- name: flush dispatcher
+  include: flush_targets.yml

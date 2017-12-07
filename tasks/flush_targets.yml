@@ -1,0 +1,4 @@
+  # executes flush for every defined flush target
+- include: flush_target.yml
+  with_items: "{{ aem_dispatcher_flush_targets }}"
+  when: aem_dispatcher_flush_targets|length > 0
