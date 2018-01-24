@@ -39,5 +39,7 @@
     --write-out %{http_code} \
     --output /dev/null --silent --head --fail \
     {{ item }}{{ aem_dispatcher_flush_location }}'
+  args:
+    warn: false
   register: aem_dispatcher_flush_result
   failed_when: aem_dispatcher_flush_result.stdout != "200"
