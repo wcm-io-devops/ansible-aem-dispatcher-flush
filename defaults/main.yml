@@ -1,16 +1,20 @@
-# list of flush targets
+# List of flush targets
 aem_dispatcher_flush_targets: []
-# controls the --no-proxy curl argument
+
+# Controls the --no-proxy curl argument
 aem_dispatcher_flush_noproxy: false
-# the cq action to execute
+
+# The cq action to execute
 aem_dispatcher_flush_cq_action: Delete
-# the handle of the cq action
+
+# The handle of the cq action
 aem_dispatcher_flush_cq_handle: /
-# controls the usage of the --resolve curl argument
-aem_dispatcher_flush_resolve: false
-# the ip adress the host should be resolved to
-aem_dispatcher_flush_resolve_ip: 127.0.0.1
-# the location of the dispatcher flush
+
+# When set the hostname will be resolved to the configured IP via --resolve
+# aem_dispatcher_flush_resolve_ip: 127.0.0.1
+
+# The location of the dispatcher flush
 aem_dispatcher_flush_location: /dispatcher/invalidate.cache
-# allow insecure connection
+
+# Allow insecure connections
 aem_dispatcher_flush_insecure: false

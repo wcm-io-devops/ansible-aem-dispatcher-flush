@@ -26,14 +26,9 @@ The CQ-Action to use.
 
 The CQ-Handle to use.
 
-        aem_dispatcher_flush_resolve: false
+        # aem_dispatcher_flush_resolve_ip: 127.0.0.1
 
-Controls if the `--resolve` argument will be added to the `curl` command line.
-Use together with `aem_dispatcher_flush_resolve_ip` to override DNS.
-
-        aem_dispatcher_flush_resolve_ip: 127.0.0.1
-
-The IP of the flush target(s). Use together with `aem_dispatcher_flush_resolve: true` in order to override DNS.
+Overrides the dns resolving by using the `--resolve` curl argument for flush operations.
 
         aem_dispatcher_flush_location: /dispatcher/invalidate.cache
 

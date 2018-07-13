@@ -1,9 +1,4 @@
-  # debug echo when not flush targets provided
-- debug:
-    msg: "No flush targets provided in var 'aem_dispatcher_flush_targets'"
-  when: aem_dispatcher_flush_targets|length == 0
-
   # executes flush for every defined flush target
 - name: "Flush dispatcher caches"
-  include: flush_targets.yml
+  include_tasks: flush_targets.yml
   when: aem_dispatcher_flush_targets|length > 0
