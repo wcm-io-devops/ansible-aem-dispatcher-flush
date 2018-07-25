@@ -18,3 +18,9 @@ aem_dispatcher_flush_location: /dispatcher/invalidate.cache
 
 # Allow insecure connections
 aem_dispatcher_flush_insecure: false
+
+# Maximum time allowed for the connection to the dispatcher in seconds
+aem_dispatcher_flush_connect_timeout: 10
+
+# Maximum time allowed for the dispatcher flush operation in seconds
+aem_dispatcher_flush_timeout: 60

@@ -38,6 +38,14 @@ The location of dispatcher invalidate cache.
 
 Allows insecure HTTPS connections.
 
+    aem_dispatcher_flush_connect_timeout: 10
+
+Maximum time allowed for the connection to the dispatcher in seconds.
+
+    aem_dispatcher_flush_timeout: 60
+
+Maximum time allowed for the dispatcher flush operation in seconds.
+
 ## Dependencies
 
 This role has no dependencies.
