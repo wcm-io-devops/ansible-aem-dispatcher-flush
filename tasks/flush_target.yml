@@ -33,6 +33,8 @@
     {{ _flush_resolve_argument }} \
     {{ _flush_noproxy_argument }} \
     {{ _flush_insecure_argument }} \
+    --max-time {{ aem_dispatcher_flush_timeout }} \
+    --connect-timeout {{ aem_dispatcher_flush_connect_timeout }} \
     -X POST \
     -H "CQ-Action: {{ aem_dispatcher_flush_cq_action }}" \
     -H "CQ-Handle: {{ aem_dispatcher_flush_cq_handle }}" \
