@@ -1,4 +1,4 @@
-# wcm-io-devops.aem-dispatcher-flush
+# wcm-io-devops.aem_dispatcher_flush
 
 This role flushes one or multiple AEM dispatcher caches by using `curl`.
 
@@ -84,7 +84,7 @@ Flushes the dispatcher running on https://aem-author with custom values:
     aem_dispatcher_flush_resolve: true
     aem_dispatcher_flush_resolve_ip: 127.0.0.1
   roles:
-    - wcm-io-devops.aem-dispatcher-flush
+    - wcm-io-devops.aem_dispatcher_flush
 ```
 
 This playbook will result in the following curl command:
