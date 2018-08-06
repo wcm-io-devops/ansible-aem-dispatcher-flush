@@ -28,14 +28,11 @@ def parse_url(url):
         result['scheme_port'] = 443
     else:
         result['scheme_port'] = 80
-
-
     return result
-
 
 class FilterModule(object):
 
     def filters(self):
         return {
-                "parse_url": parse_url
+            "parse_url": parse_url
         }
