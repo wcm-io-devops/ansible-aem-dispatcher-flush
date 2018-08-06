@@ -5,6 +5,7 @@ __metaclass__ = type
 
 from urlparse import urlparse
 
+
 def parse_url(url):
     """return a dict, of the parsed elements"""
     result = {}
@@ -27,6 +28,7 @@ def parse_url(url):
     else:
         result['scheme_port'] = 80
     return result
+
 
 class FilterModule(object):
 
