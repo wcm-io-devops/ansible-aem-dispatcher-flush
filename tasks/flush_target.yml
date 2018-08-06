@@ -8,7 +8,7 @@
   # use custom filter plugin to parse the target
 - name: "{{ item }} : parse"
   set_fact:
-    _flush_target : "{{ item | parse_url }}"
+    _flush_target: "{{ item | parse_url }}"
 
   # set curl --resolve parameter when enabled
 - name: "{{ item }} : Add '--resolve'"

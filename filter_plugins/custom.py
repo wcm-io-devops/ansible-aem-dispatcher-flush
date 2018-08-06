@@ -1,8 +1,6 @@
 # Thanks to https://gist.github.com/halberom/a5aebb34da179fdce91a1bd018ec2805
 from __future__ import (absolute_import, division, print_function)
 
-from ansible.modules.cloud.amazon.ec2_asg import elb_dreg
-
 __metaclass__ = type
 
 from urlparse import urlparse
