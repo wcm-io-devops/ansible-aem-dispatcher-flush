@@ -22,10 +22,10 @@
     _flush_noproxy_argument: '--noproxy {{ _flush_target.hostname }}'
   when: aem_dispatcher_flush_noproxy
 
-# set curl -k parameter when enabled
-- name: "{{ item }} : Add '-k'"
+# set curl --insecure parameter when enabled
+- name: "{{ item }} : Add '--insecure'"
   set_fact:
-    _flush_insecure_argument: '-k'
+    _flush_insecure_argument: '--insecure'
   when: aem_dispatcher_flush_insecure
 
 - name: "{{ item }} : flush"
