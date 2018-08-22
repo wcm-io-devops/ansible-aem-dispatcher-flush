@@ -16,7 +16,7 @@ List of targets to be flushed.
 
         aem_dispatcher_flush_noproxy: false
 
-Controls if the `--no-proxy` `curl` will be added for the flush targets.
+Controls if the `--noproxy` `curl` will be added for the flush targets.
 
         aem_dispatcher_flush_cq_action: Delete
 

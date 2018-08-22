@@ -1,7 +1,7 @@
 # List of flush targets
 aem_dispatcher_flush_targets: []
 
-# Controls the --no-proxy curl argument
+# Controls the --noproxy curl argument
 aem_dispatcher_flush_noproxy: false
 
 # The cq action to execute
