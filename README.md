@@ -2,6 +2,12 @@
 
 This role flushes one or multiple AEM dispatcher caches by using `curl`.
 
+> This role was developed as part of the
+> [wcm.io DevOps Ansible Automation for AEM](http://devops.wcm.io/ansible-aem/)
+> to integrate Ansible with
+> [CONGA](http://devops.wcm.io/conga/) but can be used independently of
+> it.
+
 ## Requirements
 
 This role requires Ansible 2.0 or higher and was tested with AEM dispatcher 4.2+
