@@ -45,3 +45,5 @@
     warn: false
   register: aem_dispatcher_flush_result
   failed_when: aem_dispatcher_flush_result.stdout != "200"
+  tags:
+    - skip_ansible_lint
