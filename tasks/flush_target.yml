@@ -13,7 +13,8 @@
   # set curl --resolve parameter when enabled
 - name: "{{ item }} : Add '--resolve'"
   set_fact:
-    _flush_resolve_argument: '--resolve "{{ _flush_target.hostname }}:{{ _flush_target.scheme_port }}:{{ aem_dispatcher_flush_resolve_ip }}"'
+    _flush_resolve_argument: >-
+      '--resolve "{{ _flush_target.hostname }}:{{ _flush_target.scheme_port }}:{{ aem_dispatcher_flush_resolve_ip }}"'
   when: aem_dispatcher_flush_resolve_ip is defined
 
   #- name: Add --noproxy option when defined
