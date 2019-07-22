@@ -3,8 +3,11 @@ from __future__ import (absolute_import, division, print_function)
 
 __metaclass__ = type
 
-from urlparse import urlparse
-
+import sys
+if sys.version_info > (2, 7):
+    from urllib.parse import urlparse
+else:
+    from urlparse import urlparse
 
 def parse_url(url):
     """return a dict, of the parsed elements"""
