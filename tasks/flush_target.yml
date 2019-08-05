@@ -41,19 +41,42 @@
     _flush_insecure_argument: '--insecure'
   when: aem_dispatcher_flush_insecure
 
+- name: "{{ item }} : Set base curl command."
+  set_fact:
+    _curl_base_command: >-
+        curl
+        {{ _flush_resolve_argument }}
+        {{ _flush_noproxy_argument }}
+        {{ _flush_insecure_argument }}
+        --max-time {{ aem_dispatcher_flush_timeout }}
+        --connect-timeout {{ aem_dispatcher_flush_connect_timeout }}
+        -X POST
+        -H 'CQ-Action: {{ aem_dispatcher_flush_cq_action }}'
+        -H 'CQ-Handle: {{ aem_dispatcher_flush_cq_handle }}'
+
+- name: "{{ item }} : Set curl commands."
+  set_fact:
+    # command used internally only
+    _curl_internal_command: >-
+      {{ _curl_base_command }}
+      --write-out %{http_code}
+      --output /dev/null --silent --head --fail
+      {{ item }}{{ aem_dispatcher_flush_location }}
+    # command will be displayed to the user to ensure fast debugging
+    _curl_debug_command: >-
+      {{ _curl_base_command }}
+      {{ item }}{{ aem_dispatcher_flush_location }}
+
+- name: "{{ item }}: Log curl command for debug issues."
+  debug:
+    msg:
+      - "Internal curl command:"
+      - "{{ _curl_internal_command }}"
+      - "Debug curl command:"
+      - "{{ _curl_debug_command }}"
+
 - name: "{{ item }} : flush"
-  shell: 'curl \
-    {{ _flush_resolve_argument }} \
-    {{ _flush_noproxy_argument }} \
-    {{ _flush_insecure_argument }} \
-    --max-time {{ aem_dispatcher_flush_timeout }} \
-    --connect-timeout {{ aem_dispatcher_flush_connect_timeout }} \
-    -X POST \
-    -H "CQ-Action: {{ aem_dispatcher_flush_cq_action }}" \
-    -H "CQ-Handle: {{ aem_dispatcher_flush_cq_handle }}" \
-    --write-out %{http_code} \
-    --output /dev/null --silent --head --fail \
-    {{ item }}{{ aem_dispatcher_flush_location }}'
+  shell: "{{ _curl_internal_command }}"
   args:
     warn: false
   register: aem_dispatcher_flush_result
