@@ -10,7 +10,7 @@ This role flushes one or multiple AEM dispatcher caches by using `curl`.
 
 ## Requirements
 
-This role requires Ansible 2.0 or higher and was tested with AEM dispatcher 4.2+
+This role requires Ansible 2.7 or higher and was tested with AEM dispatcher 4.2+
 
 ## Role Variables
 
