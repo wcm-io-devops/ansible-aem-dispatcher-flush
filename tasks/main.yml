@@ -1,3 +1,4 @@
+---
   # executes flush for every defined flush target
 - name: "Flush dispatcher caches"
   include_tasks: flush_targets.yml
