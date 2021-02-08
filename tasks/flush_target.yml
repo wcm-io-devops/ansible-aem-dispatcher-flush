@@ -6,7 +6,7 @@
     _flush_noproxy_argument:
     _flush_insecure_argument:
 
-  # use custom filter plugin to parse the target
+# use custom filter plugin to parse the target
 - name: "{{ item }} : parse"
   set_fact:
     _flush_target: "{{ item | urlsplit }}"
@@ -23,7 +23,7 @@
   when:
     - _flush_target.scheme == 'https'
 
-  # set curl --resolve parameter when enabled
+# set curl --resolve parameter when enabled
 - name: "{{ item }} : Add '--resolve'"
   set_fact:
     _flush_resolve_argument: >-
