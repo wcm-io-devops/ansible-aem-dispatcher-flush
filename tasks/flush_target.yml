@@ -1,11 +1,12 @@
-  # set default facts
+---
+# set default facts
 - name: "Set default facts"
   set_fact:
     _flush_resolve_argument:
     _flush_noproxy_argument:
     _flush_insecure_argument:
 
-  # use custom filter plugin to parse the target
+# use custom filter plugin to parse the target
 - name: "{{ item }} : parse"
   set_fact:
     _flush_target: "{{ item | urlsplit }}"
@@ -22,14 +23,13 @@
   when:
     - _flush_target.scheme == 'https'
 
-  # set curl --resolve parameter when enabled
+# set curl --resolve parameter when enabled
 - name: "{{ item }} : Add '--resolve'"
   set_fact:
     _flush_resolve_argument: >-
       --resolve {{ _flush_target.hostname }}:{{ _flush_target_scheme_port }}:{{ aem_dispatcher_flush_resolve_ip }}
   when: aem_dispatcher_flush_resolve_ip is defined
 
-  #- name: Add --noproxy option when defined
 - name: "{{ item }} : Add '--noproxy'"
   set_fact:
     _flush_noproxy_argument: '--noproxy {{ _flush_target.hostname }}'
